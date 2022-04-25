@@ -14,11 +14,12 @@ This repository contains [CLIP](https://arxiv.org/abs/2103.00020) for Japanese.
 ## Available Models
 
 Zero-shot ImageNet validation set accuracy:
-
-| Accuracy | `rinna/japanese-cloob-vit-b-16` | `rinna/japanese-clip-vit-b-16` | [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) |
-|:--------:|:--:|:---:|:---:|:---:|
-| Accuracy@1 | 48.37 | 41.09 | 38.38 | 14.09 |
-| Accuracy@5 | 65.40 | 61.83 | 59.93 | 26.43 |
+| Model Name | TOP1 |  TOP5 |
+|:--------:|:--:|:---:|
+| `rinna/japanese-cloob-vit-b-16` | 48.37 | 65.40 | 
+| `rinna/japanese-clip-vit-b-16` |  | 41.09 | 61.83 |
+| [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.38 | 59.93 |
+| [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.09 | 26.43 |
 
 *Used `{japanese_class_name}の写真` for text prompts* 
 
