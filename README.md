@@ -20,7 +20,8 @@ Zero-shot ImageNet validation set accuracy:
 | Accuracy@1 | 48.37 | 41.09 | 38.38 | 14.09 |
 | Accuracy@5 | 65.40 | 61.83 | 59.93 | 26.43 |
 
-*Each classes are converted to `{japanese_class_name}の写真`*
+*Used `{japanese_class_name}の写真` for text prompts* 
+
 ## Usage
 
 1. Install package
