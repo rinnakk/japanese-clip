@@ -62,3 +62,4 @@ print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 - [ ] Upload models to huggingface
 - [ ] Add description of each model in README
 - [ ] Add License 
+- [ ] Release first version
