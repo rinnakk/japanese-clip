@@ -37,7 +37,7 @@ from PIL import Image
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # ja_clip.available_models()
 # ['rinna/japanese-clip-vit-b-16', 'rinna/japanese-cloob-vit-b-16']
-model, preprocess = ja_clip.load("clip_vit_b_16", cache_dir="/tmp/japanese_clip", device=device)
+model, preprocess = ja_clip.load("rinna/japanese-clip-vit-b-16", cache_dir="/tmp/japanese_clip", device=device)
 tokenizer = ja_clip.load_tokenizer()
 
 image = preprocess(Image.open("./data/dog.jpeg")).unsqueeze(0).to(device)
