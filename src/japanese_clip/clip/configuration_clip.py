@@ -1,8 +1,3 @@
-"""
-CLIP-japanese model configuration
-https://github.com/huggingface/transformers/blob/v4.16.2/src/transformers/models/vision_text_dual_encoder/configuration_vision_text_dual_encoder.py
-"""
-
 import copy
 
 from transformers.configuration_utils import PretrainedConfig

@@ -57,3 +57,8 @@ with torch.no_grad():
 
 print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 ```
+
+## TODO
+- [ ] Upload models to huggingface
+- [ ] Add description of each model in README
+- [ ] Add License 
