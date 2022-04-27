@@ -19,7 +19,7 @@ This repository contains Japanese [CLIP](https://arxiv.org/abs/2103.00020) varia
 | [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.38 | 59.93 |
 | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.09 | 26.43 |
 
-* \*Zero-shot ImageNet validation set accuracy. Used `{japanese_class_name}の写真` for text prompts *
+*\*Zero-shot ImageNet validation set accuracy. Used `{japanese_class_name}の写真` for text prompts*
 
 ## Usage
 
