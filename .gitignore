@@ -125,3 +125,4 @@ work
 # bugs on pycharms
 !__init__.py
 *.ipynb
+src/*.py
