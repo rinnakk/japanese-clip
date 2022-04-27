@@ -1,8 +1,7 @@
 # Japanese-CLIP
 ![rinna-icon](./data/rinna.png)
 
-This repository contains [CLIP](https://arxiv.org/abs/2103.00020) for Japanese.
-
+This repository contains Japanese [CLIP](https://arxiv.org/abs/2103.00020) variants by [rinna Co., Ltd](https://rinna.co.jp/).
 
 | Table of Contents |
 |-|
@@ -13,15 +12,13 @@ This repository contains [CLIP](https://arxiv.org/abs/2103.00020) for Japanese.
 
 ## Available Models
 
-Zero-shot ImageNet validation set accuracy:
-| Model Name | TOP1 |  TOP5 |
+| Model Name | TOP1\* |  TOP5\* |
 |:--------:|:--:|:---:|
-| `rinna/japanese-cloob-vit-b-16` | 48.37 | 65.40 | 
-| `rinna/japanese-clip-vit-b-16` | 41.09 | 61.83 |
+| [rinna/japanese-cloob-vit-b-16](https://huggingface.co/rinna/japanese-cloob-vit-b-16) | 48.37 | 65.40 | 
+| [rinna/japanese-clip-vit-b-16](https://huggingface.co/rinna/japanese-clip-vit-b-16) | 41.09 | 61.83 |
 | [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.38 | 59.93 |
 | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.09 | 26.43 |
-
-*Used `{japanese_class_name}の写真` for text prompts* 
+*\*Zero-shot ImageNet validation set accuracy. Used `{japanese_class_name}の写真` for text prompts*
 
 ## Usage
 
@@ -46,7 +43,7 @@ encodings = ja_clip.tokenize(
     texts=["犬", "猫", "象"],
     max_seq_len=77,
     device=device,
-    tokenizer=tokenizer, # this is optional. if you didn't pass, load tokenizer each time
+    tokenizer=tokenizer, # this is optional. if you don't pass, load tokenizer each time
 )
 
 with torch.no_grad():
@@ -60,6 +57,5 @@ print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 
 ## TODO
 - [ ] Upload models to huggingface
-- [ ] Add description of each model in README
-- [ ] Add License 
 - [ ] Release first version
+- [ ] Test downloading models from hf and inference
