@@ -17,7 +17,7 @@ setup(
     long_description_content_type="text/markdown",
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
-    license='Apache License 2.0',
+    license='Apache-2.0 License',
     install_requires=_requires_from_file('requirements.txt'),
     extras_require={'dev': ['pytest', 'python-dotenv']},
 )
