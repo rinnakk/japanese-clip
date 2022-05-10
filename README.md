@@ -10,12 +10,13 @@ This repository includes codes for Japanese [CLIP (Contrastive Language-Image Pr
 
 
 
-## Available Models
+## Pretrained models
 
 | Model Name | TOP1\* |  TOP5\* |
 |:--------:|:--:|:---:|
 | [rinna/japanese-cloob-vit-b-16](https://huggingface.co/rinna/japanese-cloob-vit-b-16) | 48.37 | 65.40 | 
 | [rinna/japanese-clip-vit-b-16](https://huggingface.co/rinna/japanese-clip-vit-b-16) | 41.09 | 61.83 |
+| | | |
 | [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.38 | 59.93 |
 | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.09 | 26.43 |
 
