@@ -5,7 +5,7 @@ This repository includes codes for Japanese [CLIP (Contrastive Language-Image Pr
 
 | Table of Contents |
 |-|
-| [Available Models](#Available-Models) |
+| [Pretrained Models](#Pretrained-Models) |
 | [Usage](#Usage) |
 
 
