@@ -1,7 +1,7 @@
 # Japanese-CLIP
 ![rinna-icon](./data/rinna.png)
 
-This repository contains Japanese [CLIP](https://arxiv.org/abs/2103.00020) variants by [rinna Co., Ltd](https://rinna.co.jp/).
+This repository includes codes for Japanese [CLIP (Contrastive Language-Image Pre-Training)](https://arxiv.org/abs/2103.00020) variants by [rinna Co., Ltd](https://rinna.co.jp/).
 
 | Table of Contents |
 |-|
@@ -19,7 +19,7 @@ This repository contains Japanese [CLIP](https://arxiv.org/abs/2103.00020) varia
 | [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.38 | 59.93 |
 | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.09 | 26.43 |
 
-*\*Zero-shot ImageNet validation set accuracy. Used `{japanese_class_name}の写真` for text prompts*
+*\*Zero-shot ImageNet validation set top-k accuracy. Used `{japanese_class_name}の写真` as text prompts*
 
 ## Usage
 
@@ -29,9 +29,9 @@ $ pip install git+https://github.com/rinnakk/japanese-clip.git
 ```
 2. Run
 ```python
+from PIL import Image
 import torch
 import japanese_clip as ja_clip
-from PIL import Image
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # ja_clip.available_models()
@@ -55,8 +55,3 @@ with torch.no_grad():
 
 print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 ```
-
-## TODO
-- [ ] Upload models to huggingface
-- [ ] Release first version
-- [ ] Test downloading models from hf and inference
