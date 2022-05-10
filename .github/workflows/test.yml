@@ -30,4 +30,6 @@ jobs:
       - run: echo "$CONDA/envs/test/bin" >> $GITHUB_PATH
       - run: pip install pytest python-dotenv
       - run: pip install .
+      - env:
+          - ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
       - run: pytest tests

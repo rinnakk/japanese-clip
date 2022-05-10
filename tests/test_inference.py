@@ -8,13 +8,12 @@ import japanese_clip as ja_clip
 
 base_dir = dirname(dirname(__file__))
 load_dotenv()
-CLOOB_VIT_B_16 = os.getenv("CLOOB_VIT_B_16")
-CLIP_VIT_B_16 = os.getenv("CLIP_VIT_B_16")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 
 
 def test_inference_clip():
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model, preprocess = ja_clip.load(CLIP_VIT_B_16, device=device)
+    model, preprocess = ja_clip.load('rinna/japanese-clip-vit-b-16', device=device, use_auth_token=ACCESS_TOKEN)
     tokenizer = ja_clip.load_tokenizer()
 
     # https://gahag.net/011423-jack-russell-terrier/
@@ -37,7 +36,7 @@ def test_inference_clip():
 
 def test_inference_cloob():
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model, preprocess = ja_clip.load(CLOOB_VIT_B_16, device=device)
+    model, preprocess = ja_clip.load('rinna/japanese-cloob-vit-b-16', device=device, use_auth_token=ACCESS_TOKEN)
     tokenizer = ja_clip.load_tokenizer()
 
     # https://gahag.net/011423-jack-russell-terrier/
