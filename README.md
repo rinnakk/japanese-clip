@@ -56,3 +56,18 @@ with torch.no_grad():
 
 print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 ```
+
+## Citation 
+To cite this repository:
+```shell
+@misc{japanese-clip,
+  author = {rinna Co., Ltd.},
+  title = {{Japanese CLIP}},
+  howpublished = {\url{https://github.com/rinnakk/japanese-clip}},
+  year = 2022,
+  month = May
+}
+```
+
+## License
+[The Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0)
