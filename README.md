@@ -61,8 +61,8 @@ print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 To cite this repository:
 ```shell
 @misc{japanese-clip,
-  author = {rinna Co., Ltd.},
-  title = {{Japanese CLIP}},
+  author = {Shing, Makoto},
+  title = {Japanese CLIP},
   howpublished = {\url{https://github.com/rinnakk/japanese-clip}},
   year = 2022,
   month = May
