@@ -29,7 +29,7 @@ v0.2.0 was released!
 | [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.95 | 60.62 |
 | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.36 | 27.28 |
 
-* \*Zero-shot ImageNet validation set top-k accuracy. *
+*\*Zero-shot ImageNet validation set top-k accuracy.*
 
 ## Usage
 
