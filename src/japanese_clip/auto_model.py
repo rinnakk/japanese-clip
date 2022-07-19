@@ -34,6 +34,10 @@ MODELS = {
         'model_class': CLOOBModel,
     }
 }
+MODEL_CLASSES = {
+    "cloob": CLOOBModel,
+    "clip": CLIPModel,
+}
 MODEL_FILE = "pytorch_model.bin"
 CONFIG_FILE = "config.json"
 
@@ -66,32 +70,26 @@ def _download(repo_id: str, cache_dir: str):
 def load(
         model_name: str,
         device: Union[str, torch.device] = "cuda" if torch.cuda.is_available() else "cpu",
-        cache_dir: str = None,
         **kwargs
 ):
     """
     Args:
         model_name: model unique name or path to pre-downloaded model
         device: device to put the loaded model
-        cache_dir: path to download model from huggingface hub
         kwargs: kwargs for huggingface pretrained model class
     Return:
         (torch.nn.Module, A torchvision transform)
     """
     if model_name in MODELS.keys():
-        config = {'model_class': CLIPModel if 'clip' in model_name else CLOOBModel}
-        # config = MODELS[model_name]
-        # _download(config['repo_id'], cache_dir)
-        # model_name = cache_dir
+        ModelClass = CLIPModel if 'clip' in model_name else CLOOBModel
     elif os.path.exists(model_name):
         assert os.path.exists(os.path.join(model_name, CONFIG_FILE))
         with open(os.path.join(model_name, CONFIG_FILE), "r", encoding="utf-8") as f:
             j = json.load(f)
-        config = MODELS[j["model_name"]]
+        ModelClass = MODEL_CLASSES[j["model_type"]]
     else:
         RuntimeError(f"Model {model_name} not found; available models = {available_models()}")
 
-    ModelClass = config['model_class']
     model = ModelClass.from_pretrained(model_name, **kwargs)
-    model = model.to(device)
+    model = model.eval().requires_grad_(False).to(device)
     return model, _transform(model.config.vision_config.image_size)

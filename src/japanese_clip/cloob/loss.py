@@ -27,8 +27,6 @@ def cloob_loss(image_features, text_features, inv_tau, scale_hopfield):
     i = identity.to(p_xx.device)
     loss_img = infoLOOB_loss(p_xx.T, p_xy.T, i, inv_tau=inv_tau)
     loss_txt = infoLOOB_loss(p_yy.T, p_yx.T, i, inv_tau=inv_tau)
-    # return loss_img + loss_txt
-    # https://github.com/crowsonkb/cloob-training/blob/master/cloob_training/loss.py#L27
     return (loss_img + loss_txt) / 2
 
 
@@ -41,10 +39,7 @@ def infoLOOB_loss(x, y, i, inv_tau):
     large_neg = -10000.0
     arg_lse = k * torch.logical_not(i) + i * large_neg
     negatives = torch.mean(torch.logsumexp(arg_lse, dim=1))
-    # crowsonkb's implementation
-    # https://github.com/crowsonkb/cloob-training/blob/master/cloob_training/loss.py#L27
     return positives + negatives
-    # return tau * (positives + negatives)
 
 
 def hopfield_retrieval(image_features, text_features, scale_hopfield):
@@ -57,10 +52,6 @@ def hopfield_retrieval(image_features, text_features, scale_hopfield):
 
 
 def hopfield(state_patterns, stored_patterns, scale_hopfield):
-    # retrieved_patterns = hopfield_layer.forward(
-    #     (stored_patterns.unsqueeze(0), state_patterns.unsqueeze(0), stored_patterns.unsqueeze(0))).squeeze()
-    # crowsonkb's implementation
-    # https://github.com/crowsonkb/cloob-training/blob/master/cloob_training/loss.py#L38
     retrieved_patterns = stored_patterns.T @ F.softmax(scale_hopfield * stored_patterns @ state_patterns.T, dim=0)
     # Row vectors -> dim=1 to normalize the row vectors
     retrieved_patterns = retrieved_patterns / retrieved_patterns.norm(dim=0, keepdim=True)
