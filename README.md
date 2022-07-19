@@ -3,6 +3,13 @@
 
 This repository includes codes for Japanese [CLIP (Contrastive Language-Image Pre-Training)](https://arxiv.org/abs/2103.00020) variants by [rinna Co., Ltd](https://rinna.co.jp/).
 
+| Table of Contents |
+|-|
+| [News](#news) |
+| [Pretrained Models](#Pretrained-Models) |
+| [Usage](#Usage) |
+| [Citation](#Citation) |
+| [License](#License) |
 
 ## News
 ### July 2022
@@ -10,15 +17,6 @@ v0.2.0 was released!
 - Both CLIP and CLOOB models were upgraded! Now, `rinna/japanese-cloob-vit-b-16` achieves 54.64 (before 48.37).
 - Released our Japanese prompt templates and an example code (see `scripts/example.py`) for zero-shot ImageNet classification. Those templates were cleaned for Japanese based on the [OpenAI 80 templates](https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb).
 - Changed the citation
-
-
-| Table of Contents |
-|-|
-| [Pretrained Models](#Pretrained-Models) |
-| [Usage](#Usage) |
-| [Citation](#Citation) |
-| [License](#License) |
-
 
 
 ## Pretrained models
