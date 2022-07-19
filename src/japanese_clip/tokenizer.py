@@ -43,7 +43,7 @@ def tokenize(
         tokenizer = load_tokenizer()
     inputs = tokenizer(
         texts,
-        max_length=max_seq_len,
+        max_length=max_seq_len-1,
         padding="max_length",
         truncation=True,
         add_special_tokens=False,

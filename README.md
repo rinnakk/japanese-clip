@@ -3,10 +3,21 @@
 
 This repository includes codes for Japanese [CLIP (Contrastive Language-Image Pre-Training)](https://arxiv.org/abs/2103.00020) variants by [rinna Co., Ltd](https://rinna.co.jp/).
 
+
+## News
+### July 2022
+v0.2.0 was released!
+- Both CLIP and CLOOB models were upgraded! Now, `rinna/japanese-cloob-vit-b-16` achieves 54.64 (before 48.37).
+- Released our Japanese prompt templates and an example code (see `scripts/example.py`) for zero-shot ImageNet classification. Those templates were cleaned for Japanese based on the [OpenAI 80 templates](https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb).
+- Changed the citation
+
+
 | Table of Contents |
 |-|
 | [Pretrained Models](#Pretrained-Models) |
 | [Usage](#Usage) |
+| [Citation](#Citation) |
+| [License](#License) |
 
 
 
@@ -14,13 +25,13 @@ This repository includes codes for Japanese [CLIP (Contrastive Language-Image Pr
 
 | Model Name | TOP1\* |  TOP5\* |
 |:--------:|:--:|:---:|
-| [rinna/japanese-cloob-vit-b-16](https://huggingface.co/rinna/japanese-cloob-vit-b-16) | 48.37 | 65.40 | 
-| [rinna/japanese-clip-vit-b-16](https://huggingface.co/rinna/japanese-clip-vit-b-16) | 41.09 | 61.83 |
+| [rinna/japanese-cloob-vit-b-16](https://huggingface.co/rinna/japanese-cloob-vit-b-16) | 54.64 | 72.86 | 
+| [rinna/japanese-clip-vit-b-16](https://huggingface.co/rinna/japanese-clip-vit-b-16) | 50.69 | 72.35 |
 | | | |
-| [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.38 | 59.93 |
-| [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.09 | 26.43 |
+| [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.95 | 60.62 |
+| [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.36 | 27.28 |
 
-*\*Zero-shot ImageNet validation set top-k accuracy. Used `{japanese_class_name}の写真` as text prompts*
+*\*Zero-shot ImageNet validation set top-k accuracy. *
 
 ## Usage
 
@@ -37,6 +48,7 @@ import japanese_clip as ja_clip
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # ja_clip.available_models()
 # ['rinna/japanese-clip-vit-b-16', 'rinna/japanese-cloob-vit-b-16']
+# If you want v0.1.0 models, set `revision='v0.1.0'`
 model, preprocess = ja_clip.load("rinna/japanese-clip-vit-b-16", cache_dir="/tmp/japanese_clip", device=device)
 tokenizer = ja_clip.load_tokenizer()
 
@@ -60,12 +72,12 @@ print("Label probs:", text_probs)  # prints: [[1.0, 0.0, 0.0]]
 ## Citation 
 To cite this repository:
 ```shell
-@misc{japanese-clip,
-  author = {Shing, Makoto},
-  title = {Japanese CLIP},
-  howpublished = {\url{https://github.com/rinnakk/japanese-clip}},
+@inproceedings{japanese-clip,
+  author = {シーン 誠, 趙 天雨, 沢田 慶},
+  title = {日本語における言語画像事前学習モデルの構築と公開},
+  booktitle= {The 25th Meeting on Image Recognition and Understanding},
   year = 2022,
-  month = May
+  month = July,
 }
 ```
 
