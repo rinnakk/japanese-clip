@@ -26,7 +26,7 @@ v0.2.0 was released!
 | [rinna/japanese-cloob-vit-b-16](https://huggingface.co/rinna/japanese-cloob-vit-b-16) | 54.64 | 72.86 | 
 | [rinna/japanese-clip-vit-b-16](https://huggingface.co/rinna/japanese-clip-vit-b-16) | 50.69 | 72.35 |
 | | | |
-| [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.95 | 60.62 |
+| [sonoisa/clip-vit-b-32-japanese-v1](https://huggingface.co/sonoisa/clip-vit-b-32-japanese-v1) | 38.88 | 60.71 |
 | [multilingual-CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1) | 14.36 | 27.28 |
 
 *\*Zero-shot ImageNet validation set top-k accuracy.*
